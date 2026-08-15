@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Login = () => {
+const Login = ({handleLogin}) => {
 
     //hum yaha pe two-way binding krenge.
     const [email, setEmail] = useState('')
@@ -9,10 +9,8 @@ const Login = () => {
     //form ka default behaviour is ki wo reload ho jata hai jaise hi submit krte hai toh.
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log("Hello Guyssss, Form Submitted!");
-        console.log("Email is ", email);
-        console.log("Password is ", password)
-
+    
+        handleLogin(email, password)
         setEmail('')
         setPassword('')
     }
